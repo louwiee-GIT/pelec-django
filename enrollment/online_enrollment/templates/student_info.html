@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title%}Student Info{% endblock %}
+
+
+{% block content %}
+    <h1>Student List</h1>
+    <ul>
+        {% for student in students %}
+        <li>{{student.student_id }} | {{student.firstname | upper }} | {{student.lastname | upper}} |  {{student.course | upper}} |  {{student.section | upper}}</li>
+        
+        {%empty%}
+        <li>No students Found.</li>
+        {% endfor %}
+    </ul>
+    
+{% endblock %}

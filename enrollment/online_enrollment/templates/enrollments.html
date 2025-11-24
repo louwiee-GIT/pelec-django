@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title%}Enrollment Info{% endblock %}
+
+
+{% block content %}
+    <h1>Enrollment List</h1>
+    <ul>
+        {% for enrollment in enrollments %}
+        <li>{{enrollment.enrollment_id }} | {{enrollment.student_id}} | {{enrollment.course_id | upper}} |  {{enrollment.enrollment_date}} |  {{enrollment.status | upper}}</li>
+        
+        {%empty%}
+        <li>No students Found.</li>
+        {% endfor %}
+    </ul>
+    
+{% endblock %}
